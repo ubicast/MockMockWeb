@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="33949cb8-0c2f-4ec9-8858-7da42bee550f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/static_file.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.js" afterPath="$PROJECT_DIR$/server.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="MockMockWeb.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="33949cb8-0c2f-4ec9-8858-7da42bee550f" time="1364808053988" ignored="false" />
+    <file path="/Dummy.txt" changelist="33949cb8-0c2f-4ec9-8858-7da42bee550f" time="1364810536508" ignored="false" />
     <file path="/todo.txt" changelist="33949cb8-0c2f-4ec9-8858-7da42bee550f" time="1364807852450" ignored="false" />
     <file path="/server.js" changelist="33949cb8-0c2f-4ec9-8858-7da42bee550f" time="1364810047824" ignored="false" />
     <file path="/static_file.js" changelist="33949cb8-0c2f-4ec9-8858-7da42bee550f" time="1364808463601" ignored="false" />
@@ -43,7 +42,7 @@
       <file leaf-file-name="server.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="31" selection-start="98" selection-end="107" vertical-scroll-proportion="0.09463722">
+            <state line="6" column="65" selection-start="231" selection-end="237" vertical-scroll-proportion="0.18927445">
               <folding />
             </state>
           </provider>
@@ -87,8 +86,8 @@
       <list>
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/todo.txt" />
-        <option value="$PROJECT_DIR$/server.js" />
         <option value="$PROJECT_DIR$/lib/static_file.js" />
+        <option value="$PROJECT_DIR$/server.js" />
       </list>
     </option>
   </component>
@@ -262,7 +261,11 @@
       <created>1364808056445</created>
       <updated>1364808056445</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="added a feature to send a static file in _internal">
+      <created>1364810540618</created>
+      <updated>1364810540618</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -330,7 +333,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated todo.txt" />
+    <option name="LAST_COMMIT_MESSAGE" value="added a feature to send a static file in _internal" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -348,6 +351,7 @@
     <MESSAGE value="added todo.txt" />
     <MESSAGE value="added common assets: jQuery, Bootstrap" />
     <MESSAGE value="updated todo.txt" />
+    <MESSAGE value="added a feature to send a static file in _internal" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -376,7 +380,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="31" selection-start="98" selection-end="107" vertical-scroll-proportion="0.09463722">
+        <state line="6" column="65" selection-start="231" selection-end="237" vertical-scroll-proportion="0.18927445">
           <folding />
         </state>
       </provider>

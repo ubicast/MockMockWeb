@@ -2,11 +2,8 @@ Features:
 * 管理画面のテンプレートだけ作る
 - 共通テンプレート機能
 
-Engineering tasks:
-- 管理領域を表すパスを決める
-- そのパスの下にcssなどの静的ファイルを配置
-
 To Do on current task:
+- nodeのテンプレートエンジンを探す
 
 Future ideas:
 - 全てのページに編集ボタン（ページ固有コンテンツ）

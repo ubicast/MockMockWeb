@@ -2,15 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="33949cb8-0c2f-4ec9-8858-7da42bee550f" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_internal/assets/images/glyphicons-halflings-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_internal/assets/images/glyphicons-halflings.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_internal/system/admin.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/static_file.js" afterPath="$PROJECT_DIR$/lib/file.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_internal/assets/css/bootstrap.css" afterPath="$PROJECT_DIR$/_internal/assets/css/bootstrap.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.js" afterPath="$PROJECT_DIR$/server.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/todo.txt" afterPath="$PROJECT_DIR$/todo.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="MockMockWeb.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="33949cb8-0c2f-4ec9-8858-7da42bee550f" time="1364810536508" ignored="false" />
+    <file path="/Dummy.txt" changelist="33949cb8-0c2f-4ec9-8858-7da42bee550f" time="1364810678447" ignored="false" />
     <file path="/todo.txt" changelist="33949cb8-0c2f-4ec9-8858-7da42bee550f" time="1364807852450" ignored="false" />
-    <file path="/server.js" changelist="33949cb8-0c2f-4ec9-8858-7da42bee550f" time="1364810047824" ignored="false" />
+    <file path="/server.js" changelist="33949cb8-0c2f-4ec9-8858-7da42bee550f" time="1364868864190" ignored="false" />
     <file path="/static_file.js" changelist="33949cb8-0c2f-4ec9-8858-7da42bee550f" time="1364808463601" ignored="false" />
+    <file path="/file.js" changelist="33949cb8-0c2f-4ec9-8858-7da42bee550f" time="1364870389118" ignored="false" />
+    <file path="/admin.html" changelist="33949cb8-0c2f-4ec9-8858-7da42bee550f" time="1364870405003" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,37 +39,46 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="todo.txt" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/todo.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="9" selection-start="9" selection-end="9" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="package.json" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="0" selection-start="145" selection-end="145" vertical-scroll-proportion="-6.1538463">
+            <state line="1" column="22" selection-start="13" selection-end="24" vertical-scroll-proportion="-0.7692308">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="server.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="admin.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_internal/system/admin.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="37" column="0" selection-start="1007" selection-end="1007" vertical-scroll-proportion="-18.26923">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="server.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="65" selection-start="231" selection-end="237" vertical-scroll-proportion="0.18927445">
+            <state line="15" column="36" selection-start="430" selection-end="430" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="static_file.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/static_file.js">
+      <file leaf-file-name="file.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/file.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="34" selection-start="276" selection-end="276" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="todo.txt" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/todo.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="17" selection-start="145" selection-end="145" vertical-scroll-proportion="0.0">
+            <state line="46" column="20" selection-start="1141" selection-end="1141" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -85,15 +103,18 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/todo.txt" />
+        <option value="$PROJECT_DIR$/_internal/assets/system/admin.html" />
         <option value="$PROJECT_DIR$/lib/static_file.js" />
         <option value="$PROJECT_DIR$/server.js" />
+        <option value="$PROJECT_DIR$/lib/file.js" />
+        <option value="$PROJECT_DIR$/_internal/system/admin.html" />
+        <option value="$PROJECT_DIR$/todo.txt" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="61" />
-    <option name="y" value="37" />
+    <option name="x" value="62" />
+    <option name="y" value="54" />
     <option name="width" value="1298" />
     <option name="height" value="780" />
   </component>
@@ -183,29 +204,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MockMockWeb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MockMockWeb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="_internal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
+              <option name="myItemId" value="system" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -223,6 +222,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/_internal" />
+      <recent name="$PROJECT_DIR$/_internal/assets/images" />
       <recent name="$PROJECT_DIR$/_internal/assets/js" />
       <recent name="$PROJECT_DIR$/_internal/assets/css" />
     </key>
@@ -234,6 +235,13 @@
       <option name="filePath" />
       <option name="scope" value="ALL" />
       <option name="testName" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Local" singleton="true">
+      <JSDebuggerConfigurationSettings>
+        <option name="engineId" />
+        <option name="fileUrl" />
+      </JSDebuggerConfigurationSettings>
       <method />
     </configuration>
     <list size="0" />
@@ -265,11 +273,15 @@
       <created>1364810540618</created>
       <updated>1364810540618</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="limited the directory of public files to assets">
+      <created>1364810681408</created>
+      <updated>1364810681408</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="61" y="37" width="1298" height="780" extended-state="0" />
+    <frame x="62" y="54" width="1298" height="780" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -333,7 +345,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="added a feature to send a static file in _internal" />
+    <option name="LAST_COMMIT_MESSAGE" value="limited the directory of public files to assets" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -352,35 +364,59 @@
     <MESSAGE value="added common assets: jQuery, Bootstrap" />
     <MESSAGE value="updated todo.txt" />
     <MESSAGE value="added a feature to send a static file in _internal" />
+    <MESSAGE value="limited the directory of public files to assets" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/_internal/assets/js/bootstrap.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="145" selection-end="145" vertical-scroll-proportion="-6.1538463">
+        <state line="1" column="22" selection-start="13" selection-end="24" vertical-scroll-proportion="-0.7692308">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/todo.txt">
+    <entry file="file://$PROJECT_DIR$/_internal/assets/css/bootstrap.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="17" selection-start="145" selection-end="145" vertical-scroll-proportion="0.0">
+        <state line="2308" column="61" selection-start="42409" selection-end="42409" vertical-scroll-proportion="0.36070853">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/static_file.js">
+    <entry file="file://$PROJECT_DIR$/lib/file.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="34" selection-start="276" selection-end="276" vertical-scroll-proportion="0.0">
+        <state line="46" column="20" selection-start="1141" selection-end="1141" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="65" selection-start="231" selection-end="237" vertical-scroll-proportion="0.18927445">
+        <state line="15" column="36" selection-start="430" selection-end="430" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_internal/system/admin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="0" selection-start="1007" selection-end="1007" vertical-scroll-proportion="-18.26923">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/todo.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="9" selection-start="9" selection-end="9" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>

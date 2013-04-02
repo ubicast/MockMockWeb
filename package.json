@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Mock up a website in seconds",
   "dependencies": {
-    "mime": "~1.2.7"
+    "mime": "~1.2.7",
+    "ejs": "~0.8.3"
   }
 }

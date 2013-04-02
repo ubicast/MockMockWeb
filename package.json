@@ -4,6 +4,7 @@
   "description": "Mock up a website in seconds",
   "dependencies": {
     "mime": "~1.2.7",
+    "connect": "~2.7.4",
     "ejs": "~0.8.3"
   }
 }

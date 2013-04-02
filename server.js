@@ -1,5 +1,6 @@
 var http = require('http');
 var fs = require('fs');
+var path = require('path');
 var file = require('./lib/file');
 var site = require('./lib/site');
 
@@ -25,11 +26,17 @@ var server = http.createServer(function(request, response) {
     file.serveStatic(response, absPath);
   }
   else if (internalPathMatch(request, '/settings')) {
-    site.layout(function(data) {
-      file.serveTemplate(response, internalAbsPath('/system/settings.html'), {
-        layout: data
+    var command = path.relative(INTERNAL_PATH + '/settings', request.url);
+    if (command == 'layout/save') {
+      // site.saveLayout(request.)
+    }
+    else {
+      site.layout(function(data) {
+        file.serveTemplate(response, internalAbsPath('/system/settings.html'), {
+          layout: data
+        });
       });
-    });
+    }
   }
   else {
     site.respond(request, response);

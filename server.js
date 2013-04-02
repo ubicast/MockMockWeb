@@ -47,7 +47,7 @@ var app = connect()
     }
     else if (internalPathMatch(request, '/content')) {
       var urlPath = request.query['path'];
-      console.log('urlPath: ' + urlPath);
+      // console.log('urlPath: ' + urlPath);
       if (urlPath) {
         site.content(urlPath, function(content) {
           file.serveTemplate(response, internalAbsPath('/system/content-editor.html'), {

@@ -48,14 +48,14 @@ var app = connect()
     else if (internalPathMatch(request, '/content')) {
       var command = path.relative(INTERNAL_PATH + '/content', request.url);
       if (command == 'save') {
-        site.saveContent(request.body.path, request.body.content, function() {
+        site.saveContent(request.body.path, request.body.content, function(err) {
+          if (err) console.log(err);
           response.writeHead(200, {'Content-Type': 'text/plain'});
           response.end('');
         });
       }
       else {
         var urlPath = request.query['path'];
-        // console.log('urlPath: ' + urlPath);
         if (urlPath) {
           site.content(urlPath, function(content) {
             file.serveTemplate(response, internalAbsPath('/system/content-editor.html'), {

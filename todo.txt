@@ -1,7 +1,9 @@
 Features:
 - 共通テンプレート機能
+- サイトコンテンツ編集機能
 
 To Do on current task:
+* 共通テンプレートの編集機能
 
 Future ideas:
 - 全てのページに編集ボタン（ページ固有コンテンツ）

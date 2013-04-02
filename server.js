@@ -25,7 +25,11 @@ var server = http.createServer(function(request, response) {
     file.serveStatic(response, absPath);
   }
   else if (internalPathMatch(request, '/settings')) {
-    file.serveTemplate(response, internalAbsPath('/system/settings.html'));
+    site.layout(function(data) {
+      file.serveTemplate(response, internalAbsPath('/system/settings.html'), {
+        layout: data
+      });
+    });
   }
   else {
     site.respond(request, response);

@@ -24,8 +24,8 @@ var server = http.createServer(function(request, response) {
     var absPath = '.' + request.url;
     file.serveStatic(response, absPath);
   }
-  else if (internalPathMatch(request, '/admin')) {
-    file.serveTemplate(response, internalAbsPath('/system/admin.html'));
+  else if (internalPathMatch(request, '/settings')) {
+    file.serveTemplate(response, internalAbsPath('/system/settings.html'));
   }
   else {
     site.respond(request, response);

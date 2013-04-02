@@ -45,7 +45,9 @@ var app = connect()
       }
     }
     else {
-      site.respond(request, response);
+      site.content(request.url, function(content) {
+        site.respond(request, response, content);
+      });
     }
   });
 var server = http.createServer(app).listen(3000, function() {

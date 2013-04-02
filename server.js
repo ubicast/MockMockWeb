@@ -1,6 +1,7 @@
 var http = require('http');
 var fs = require('fs');
 var path = require('path');
+var connect = require('connect');
 var file = require('./lib/file');
 var site = require('./lib/site');
 
@@ -20,29 +21,34 @@ var defaultLayout = fs.readFileSync(
 site.init(internalAbsPath('/site-data'), defaultLayout);
 
 // Start up the server
-var server = http.createServer(function(request, response) {
-  if (internalPathMatch(request, '/assets')) {
-    var absPath = '.' + request.url;
-    file.serveStatic(response, absPath);
-  }
-  else if (internalPathMatch(request, '/settings')) {
-    var command = path.relative(INTERNAL_PATH + '/settings', request.url);
-    if (command == 'layout/save') {
-      // site.saveLayout(request.)
+var app = connect()
+  .use(connect.bodyParser())
+  .use(function(request, response){
+    if (internalPathMatch(request, '/assets')) {
+      var absPath = '.' + request.url;
+      file.serveStatic(response, absPath);
+    }
+    else if (internalPathMatch(request, '/settings')) {
+      var command = path.relative(INTERNAL_PATH + '/settings', request.url);
+      if (command == 'layout/save') {
+        site.saveLayout(request.body.layout, function() {
+          response.writeHead(200, {'Content-Type': 'text/plain'});
+          response.end('');
+        });
+      }
+      else {
+        site.layout(function(data) {
+          file.serveTemplate(response, internalAbsPath('/system/settings.html'), {
+            layout: data
+          });
+        });
+      }
     }
     else {
-      site.layout(function(data) {
-        file.serveTemplate(response, internalAbsPath('/system/settings.html'), {
-          layout: data
-        });
-      });
+      site.respond(request, response);
     }
-  }
-  else {
-    site.respond(request, response);
-  }
-});
-server.listen(3000, function() {
+  });
+var server = http.createServer(app).listen(3000, function() {
   console.log("Server listening on port 3000.");
 });
 

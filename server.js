@@ -28,9 +28,7 @@ var server = http.createServer(function(request, response) {
     file.serveTemplate(response, internalAbsPath('/system/admin.html'));
   }
   else {
-    response.writeHead(200, {'Content-Type': 'text/plain'});
-    response.write('URL: ' + request.url);
-    response.end();
+    site.respond(request, response);
   }
 });
 server.listen(3000, function() {

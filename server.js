@@ -1,5 +1,7 @@
 var http = require('http');
+var fs = require('fs');
 var file = require('./lib/file');
+var site = require('./lib/site');
 
 var INTERNAL_PATH = '/_internal';
 
@@ -11,6 +13,12 @@ function internalAbsPath(path) {
   return '.' + INTERNAL_PATH + path;
 }
 
+// Initialize the site
+var defaultLayout = fs.readFileSync(
+  internalAbsPath('/system/default-layout.html'), {encoding: 'utf8'});
+site.init(internalAbsPath('/site-data'), defaultLayout);
+
+// Start up the server
 var server = http.createServer(function(request, response) {
   if (internalPathMatch(request, '/assets')) {
     var absPath = '.' + request.url;
@@ -25,7 +33,6 @@ var server = http.createServer(function(request, response) {
     response.end();
   }
 });
-
 server.listen(3000, function() {
   console.log("Server listening on port 3000.");
 });

@@ -46,18 +46,27 @@ var app = connect()
       }
     }
     else if (internalPathMatch(request, '/content')) {
-      var urlPath = request.query['path'];
-      // console.log('urlPath: ' + urlPath);
-      if (urlPath) {
-        site.content(urlPath, function(content) {
-          file.serveTemplate(response, internalAbsPath('/system/content-editor.html'), {
-            path: urlPath,
-            content: content
-          });
+      var command = path.relative(INTERNAL_PATH + '/content', request.url);
+      if (command == 'save') {
+        site.saveContent(request.body.path, request.body.content, function() {
+          response.writeHead(200, {'Content-Type': 'text/plain'});
+          response.end('');
         });
       }
       else {
-        file.send404(response);
+        var urlPath = request.query['path'];
+        // console.log('urlPath: ' + urlPath);
+        if (urlPath) {
+          site.content(urlPath, function(content) {
+            file.serveTemplate(response, internalAbsPath('/system/content-editor.html'), {
+              path: urlPath,
+              content: content
+            });
+          });
+        }
+        else {
+          file.send404(response);
+        }
       }
     }
     else {

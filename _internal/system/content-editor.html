@@ -33,17 +33,24 @@
 <body>
 
 <div class="container">
-  <div id="layout-form">
+  <div id="content-form-div">
     <script type="text/javascript">
       jQuery(function() {
-
+        jQuery('#save-content').click(function() {
+          var params = jQuery('#content-form').serialize();
+          jQuery.post('/_internal/content/save', params, function() {
+            window.opener.location.reload();
+            window.close();
+          });
+        });
       });
     </script>
-    <form>
+    <form id="content-form">
       <div class="form-title"><%= path %></div>
-      <textarea id="input-layout" rows="3"><%= content %></textarea>
+      <input type="hidden" name="path" value="<%= path %>"/>
+      <textarea name="content" rows="3"><%= content %></textarea>
       <div class="btn-group">
-        <button id="save-layout" class="btn btn-primary" type="button">Save</button>
+        <button id="save-content" class="btn btn-primary" type="button">Save</button>
       </div>
       <span class="status"></span>
     </form>

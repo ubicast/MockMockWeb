@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>MockMockWeb Content</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Le styles -->
+  <link href="/_internal/assets/css/bootstrap.css" rel="stylesheet">
+  <style>
+    body {
+      padding-top: 20px;
+    }
+    div.form-title {
+      margin-bottom: 10px;
+      border-bottom: 1px solid #eeeeee;
+      font-size: 18px;
+    }
+    textarea {
+      width: 100%;
+      height: 400px;
+    }
+    span.status {
+      margin-left: 5px;
+      color: red;
+    }
+  </style>
+  <link href="/_internal/assets/css/bootstrap-responsive.css" rel="stylesheet">
+
+  <script src="/_internal/assets/js/jquery-1.9.1.min.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+  <div id="layout-form">
+    <script type="text/javascript">
+      jQuery(function() {
+
+      });
+    </script>
+    <form>
+      <div class="form-title"><%= path %></div>
+      <textarea id="input-layout" rows="3"><%= content %></textarea>
+      <div class="btn-group">
+        <button id="save-layout" class="btn btn-primary" type="button">Save</button>
+      </div>
+      <span class="status"></span>
+    </form>
+  </div>
+</div>
+
+<script src="/_internal/assets/js/bootstrap.min.js"></script>
+</body>
+</html>

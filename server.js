@@ -22,6 +22,7 @@ site.init(internalAbsPath('/site-data'), defaultLayout);
 
 // Start up the server
 var app = connect()
+  .use(connect.query())
   .use(connect.bodyParser())
   .use(function(request, response){
     if (internalPathMatch(request, '/assets')) {
@@ -42,6 +43,21 @@ var app = connect()
             layout: data
           });
         });
+      }
+    }
+    else if (internalPathMatch(request, '/content')) {
+      var urlPath = request.query['path'];
+      console.log('urlPath: ' + urlPath);
+      if (urlPath) {
+        site.content(urlPath, function(content) {
+          file.serveTemplate(response, internalAbsPath('/system/content-editor.html'), {
+            path: urlPath,
+            content: content
+          });
+        });
+      }
+      else {
+        file.send404(response);
       }
     }
     else {

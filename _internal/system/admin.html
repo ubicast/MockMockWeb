@@ -13,6 +13,15 @@
     body {
       padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
     }
+    div.form-title {
+      margin-bottom: 10px;
+      border-bottom: 1px solid #eeeeee;
+      font-size: 18px;
+    }
+    textarea {
+      width: 100%;
+      height: 400px;
+    }
   </style>
   <link href="/_internal/assets/css/bootstrap-responsive.css" rel="stylesheet">
 
@@ -26,10 +35,10 @@
     <div class="container">
       <a class="brand" href="#">MockMockWeb</a>
       <div class="nav-collapse collapse">
-        <ul class="nav">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#about">About</a></li>
-        </ul>
+        <!--<ul class="nav">-->
+          <!--<li class="active"><a href="#">Home</a></li>-->
+          <!--<li><a href="#about">About</a></li>-->
+        <!--</ul>-->
       </div><!--/.nav-collapse -->
     </div>
   </div>
@@ -37,6 +46,13 @@
 
 <div class="container">
 
+  <div id="layout-form">
+    <form>
+      <div class="form-title">Shared Layout</div>
+      <textarea rows="3"></textarea>
+      <button class="btn btn-primary" type="button">Save</button>
+    </form>
+  </div>
 
 </div> <!-- /container -->
 

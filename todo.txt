@@ -2,7 +2,7 @@ Features:
 - サイトコンテンツ編集機能
 
 To Do on current task:
-* サイトコンテンツ表示
+* コンテンツ編集ウィンドウ表示
 
 Future ideas:
 - 全てのページに編集ボタン（ページ固有コンテンツ）

@@ -22,3 +22,4 @@ Future ideas:
 - 公開プロジェクト化
 -- GitHubの会社ページ - https://github.com/ubicast/
 -- ライセンス
+-- きちんとテストを書く

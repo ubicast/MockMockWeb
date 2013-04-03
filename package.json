@@ -2,6 +2,9 @@
   "name": "MockMockWeb",
   "version": "0.0.1",
   "description": "Mock up a website in seconds",
+  "engines": {
+    "node": "0.10.x"
+  },
   "dependencies": {
     "mime": "~1.2.7",
     "connect": "~2.7.4",

@@ -16,10 +16,14 @@ Getting Started
 
 1) Install [Node.js](http://nodejs.org/)
 
-2) Run the MockMockWeb server
+2) Get MockMockWeb
+
+    $ git clone https://github.com/ubicast/MockMockWeb.git
+
+3) Run the MockMockWeb server
 
     $ node server.js
 
-3) Bring up a web browser and go to http://localhost:3000
+4) Bring up a web browser and go to http://localhost:3000
 
-4) Edit the empty website as you want
+5) Edit the empty website as you want

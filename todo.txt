@@ -1,9 +1,19 @@
+MockMockWeb
+
 Features:
-- サイトコンテンツ編集機能
+- サイトデータのエクスポート/インポート
+
+User Stories:
+
+Engineering Tasks:
+- querystringが含まれる場合にどうなる？
 
 To Do on current task:
-* コンテンツ編集ウィンドウ表示
+* importされたオブジェクトの名前を大文字で始める（ローカル変数との衝突防止）
 
 Future ideas:
 - ロギング
 - パスへの意味付け（名前、関連）
+- 公開プロジェクト化
+-- GitHubの会社ページ - https://github.com/ubicast/
+-- ライセンス

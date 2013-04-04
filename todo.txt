@@ -22,5 +22,6 @@ Future ideas:
 -- GitHubの会社ページ - https://github.com/ubicast/
 -- ライセンス
 -- きちんとテストを書く
+-- プロジェクトサイトにLPOを適用してみる
 - On-memory, One-sessionのMock Webサービス
 

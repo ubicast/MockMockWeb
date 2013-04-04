@@ -11,9 +11,10 @@ Features:
 User Stories:
 
 Engineering Tasks:
+- Settingsページの共通レイアウト切り出し
 
 To Do on current task:
-* querystringが含まれる場合にどうなる？
+* querystringにURLエンコード済みの文字が入っている場合
 
 Future ideas:
 - ロギング

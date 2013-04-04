@@ -1,6 +1,5 @@
 var Http = require('http');
 var Fs = require('fs');
-var Path = require('path');
 var Connect = require('connect');
 var File = require('./lib/file');
 var Site = require('./lib/site');
@@ -30,8 +29,8 @@ var app = Connect()
       File.serveStatic(response, absPath);
     }
     else if (internalPathMatch(request, '/settings')) {
-      var command = Path.relative(INTERNAL_PATH + '/settings', request.url);
-      if (command == 'layout/save') {
+      var command = request.url.replace(INTERNAL_PATH + '/settings', '');
+      if (command == '/layout/save') {
         Site.saveLayout(request.body.layout, function() {
           response.writeHead(200, {'Content-Type': 'text/plain'});
           response.end('');
@@ -46,8 +45,8 @@ var app = Connect()
       }
     }
     else if (internalPathMatch(request, '/content')) {
-      var command = Path.relative(INTERNAL_PATH + '/content', request.url);
-      if (command == 'save') {
+      var command = request.url.replace(INTERNAL_PATH + '/content', '');
+      if (command == '/save') {
         Site.saveContent(request.body.path, request.body.content, function(err) {
           if (err) console.log(err);
           response.writeHead(200, {'Content-Type': 'text/plain'});

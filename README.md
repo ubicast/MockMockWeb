@@ -6,7 +6,7 @@ MockMockWeb is a Node.js-based web application server that allows you to:
 * instantly launch a website that sends an empty page (with status 200) to any request/URL
 * edit any page on the spot
 * edit the layout shared throughout your website
-* use the website as if it was real (actually it is real)
+* use the website as if it was real
 * get full control of the content and structure
 
 MockMockWeb lets you build a mock (sometimes real) website in a request-driven interaction, very intuitive and easy to use (almost no learning curve).

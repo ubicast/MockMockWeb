@@ -11,10 +11,9 @@ Features:
 User Stories:
 
 Engineering Tasks:
-- querystringが含まれる場合にどうなる？
 
 To Do on current task:
-* importされたオブジェクトの名前を大文字で始める（ローカル変数との衝突防止）
+* querystringが含まれる場合にどうなる？
 
 Future ideas:
 - ロギング
@@ -23,3 +22,5 @@ Future ideas:
 -- GitHubの会社ページ - https://github.com/ubicast/
 -- ライセンス
 -- きちんとテストを書く
+- On-memory, One-sessionのMock Webサービス
+

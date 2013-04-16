@@ -3,6 +3,7 @@ var Fs = require('fs');
 var Connect = require('connect');
 var File = require('./lib/file');
 var Site = require('./lib/site');
+var Repository = require('./lib/repository');
 
 var INTERNAL_PATH = '/_internal';
 
@@ -14,10 +15,11 @@ function internalAbsPath(path) {
   return '.' + INTERNAL_PATH + path;
 }
 
-// Initialize the site
+// Initializing
+var repository = new Repository.InMemory();
 var defaultLayout = Fs.readFileSync(
   internalAbsPath('/system/default-layout.html'), {encoding: 'utf8'});
-Site.init(internalAbsPath('/site-data'), defaultLayout);
+var site = new Site(Site.newData('default', defaultLayout), repository);
 
 // Start up the server
 var app = Connect()
@@ -31,23 +33,23 @@ var app = Connect()
     else if (internalPathMatch(request, '/settings')) {
       var command = request.url.replace(INTERNAL_PATH + '/settings', '');
       if (command == '/layout/save') {
-        Site.saveLayout(request.body.layout, function() {
+        site.setLayout(request.body.layout);
+        site.save(function() {
           response.writeHead(200, {'Content-Type': 'text/plain'});
           response.end('');
         });
       }
       else {
-        Site.layout(function(data) {
-          File.serveTemplate(response, internalAbsPath('/system/settings.html'), {
-            layout: data
-          });
+        File.serveTemplate(response, internalAbsPath('/system/settings.html'), {
+          layout: site.getLayout()
         });
       }
     }
     else if (internalPathMatch(request, '/content')) {
       var command = request.url.replace(INTERNAL_PATH + '/content', '');
       if (command == '/save') {
-        Site.saveContent(request.body.path, request.body.content, function(err) {
+        site.setContent(request.body.path, request.body.content);
+        site.save(function(err) {
           if (err) console.log(err);
           response.writeHead(200, {'Content-Type': 'text/plain'});
           response.end('');
@@ -56,11 +58,9 @@ var app = Connect()
       else {
         var urlPath = request.query['path'];
         if (urlPath) {
-          Site.content(urlPath, function(content) {
-            File.serveTemplate(response, internalAbsPath('/system/content-editor.html'), {
-              path: urlPath,
-              content: content
-            });
+          File.serveTemplate(response, internalAbsPath('/system/content-editor.html'), {
+            path: urlPath,
+            content: site.getContent(urlPath)
           });
         }
         else {
@@ -69,9 +69,7 @@ var app = Connect()
       }
     }
     else {
-      Site.content(request.url, function(content) {
-        Site.respond(request, response, content);
-      });
+      site.respond(request, response);
     }
   });
 var server = Http.createServer(app).listen(3000, function() {

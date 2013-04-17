@@ -5,27 +5,9 @@
   <title>MockMockWeb Settings</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Le styles -->
   <link href="/_internal/assets/css/bootstrap.css" rel="stylesheet">
-  <style>
-    body {
-      padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
-    }
-    div.form-title {
-      margin-bottom: 10px;
-      border-bottom: 1px solid #eeeeee;
-      font-size: 18px;
-    }
-    textarea {
-      width: 100%;
-      height: 400px;
-    }
-    span.status {
-      margin-left: 5px;
-      color: red;
-    }
-  </style>
   <link href="/_internal/assets/css/bootstrap-responsive.css" rel="stylesheet">
+  <link href="/_internal/assets/css/settings.css" rel="stylesheet">
 
   <script src="/_internal/assets/js/jquery-1.9.1.min.js"></script>
 </head>
@@ -38,10 +20,8 @@
       <a class="brand" href="/">MockMockWeb</a>
       <div class="nav-collapse collapse">
         <ul class="nav">
-          <li class="active"><a href="/_internal/settings">Home</a></li>
+          <li class="active"><a href="/_internal/settings">Contents</a></li>
           <li><a href="#">Layout</a></li>
-          <li><a href="#">Pages</a></li>
-          <li><a href="#">About</a></li>
         </ul>
       </div><!--/.nav-collapse -->
     </div>
@@ -54,9 +34,12 @@
     <script type="text/javascript">
       jQuery(function() {
         jQuery('#save-layout').click(function() {
+          var button = jQuery(this).button('loading');
+          var status = jQuery('#layout-form').find('span.status').empty();
           var layout = jQuery('#input-layout').val();
           jQuery.post('/_internal/settings/layout/save', {layout: layout}, function() {
-            jQuery('#layout-form span.status').text('Saved');
+            button.button('reset');
+            status.html('<i class="icon-ok"></i> Saved');
           });
         });
       });
@@ -65,7 +48,8 @@
       <div class="form-title">Shared Layout</div>
       <textarea id="input-layout" rows="3"><%= layout %></textarea>
       <div class="btn-group">
-        <button id="save-layout" class="btn btn-primary" type="button">Save</button>
+        <button id="save-layout" class="btn btn-primary" type="button"
+                data-loading-text="Saving...">Save</button>
       </div>
       <span class="status"></span>
     </form>
@@ -73,10 +57,6 @@
 
 </div> <!-- /container -->
 
-<!-- Le javascript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
 <script src="/_internal/assets/js/bootstrap.min.js"></script>
-
 </body>
 </html>

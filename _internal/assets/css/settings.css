@@ -1,0 +1,25 @@
+body {
+  padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+}
+
+textarea {
+  width: 100%;
+  height: 400px;
+}
+
+div.form-title {
+  margin-bottom: 10px;
+  border-bottom: 1px solid #eeeeee;
+  font-size: 18px;
+}
+
+span.status {
+  margin-left: 5px;
+  color: green;
+}
+
+span.icon-accept {
+  background: url(../images/accept.png) 0 50% no-repeat;
+  padding-left: 10px;
+  padding-right: 2px;
+}

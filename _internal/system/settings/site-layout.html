@@ -1,0 +1,23 @@
+<div id="layout-form">
+  <script type="text/javascript">
+    jQuery(function() {
+      jQuery('#save-layout').click(function() {
+        var button = jQuery(this).button('loading');
+        var status = jQuery('#layout-form').find('span.status').empty();
+        var layout = jQuery('#input-layout').val();
+        jQuery.post('/_internal/settings/layout/save', {layout: layout}, function() {
+          button.button('reset');
+          status.html('<i class="icon-ok"></i> Saved');
+        });
+      });
+    });
+  </script>
+  <form>
+    <textarea id="input-layout" rows="3"><%= layout %></textarea>
+    <div class="btn-group">
+      <button id="save-layout" class="btn btn-primary" type="button"
+              data-loading-text="Saving...">Save</button>
+    </div>
+    <span class="status"></span>
+  </form>
+</div>

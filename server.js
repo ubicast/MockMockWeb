@@ -31,8 +31,15 @@ var app = Connect()
       File.serveStatic(response, absPath);
     }
     else if (internalPathMatch(request, '/settings')) {
+      var borderPath = internalAbsPath('/system/settings/border-template.html');
       var command = request.url.replace(INTERNAL_PATH + '/settings', '');
-      if (command == '/layout/save') {
+      var context = { command: command };
+      if (command == '/layout') {
+        context.layout = site.getLayout();
+        File.serveTemplateWithBorder(
+          response, internalAbsPath('/system/settings/site-layout.html'), borderPath, context);
+      }
+      else if (command == '/layout/save') {
         site.setLayout(request.body.layout);
         site.save(function() {
           response.writeHead(200, {'Content-Type': 'text/plain'});
@@ -40,9 +47,8 @@ var app = Connect()
         });
       }
       else {
-        File.serveTemplate(response, internalAbsPath('/system/settings.html'), {
-          layout: site.getLayout()
-        });
+        File.serveTemplateWithBorder(
+          response, internalAbsPath('/system/settings/contents.html'), borderPath, context);
       }
     }
     else if (internalPathMatch(request, '/content')) {

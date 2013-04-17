@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>MockMockWeb Settings</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="/_internal/assets/css/bootstrap.css" rel="stylesheet">
+  <link href="/_internal/assets/css/bootstrap-responsive.css" rel="stylesheet">
+  <link href="/_internal/assets/css/settings.css" rel="stylesheet">
+
+  <script src="/_internal/assets/js/jquery-1.9.1.min.js"></script>
+</head>
+
+<body>
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="/">MockMockWeb</a>
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+          <li class="<% if (command.trim() == '') { %>active<% } %>">
+            <a href="/_internal/settings">Contents</a></li>
+          <li class="<% if (command.match('^/layout')) { %>active<% } %>">
+            <a href="/_internal/settings/layout">Layout</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <%- content %>
+</div>
+
+<script src="/_internal/assets/js/bootstrap.min.js"></script>
+</body>
+</html>

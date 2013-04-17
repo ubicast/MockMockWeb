@@ -8,7 +8,10 @@
 <tbody>
 <% contentPaths.forEach(function(path) { %>
 <tr>
-  <td><%- path %></td>
+  <td>
+    <a class="content-path" href="<%= path %>" target="_blank">
+      <%= path %></a>
+  </td>
   <td class="column-delete">
     <a href="#" onclick="return false;">
       <i class="icon-remove"></i></a>

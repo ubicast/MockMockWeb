@@ -2,6 +2,7 @@
 <thead>
 <tr>
   <th>Path</th>
+  <th class="column-edit">Edit</th>
   <th class="column-delete">Delete</th>
 </tr>
 </thead>
@@ -11,6 +12,10 @@
   <td>
     <a class="content-path" href="<%= path %>" target="_blank">
       <%= path %></a>
+  </td>
+  <td class="column-edit">
+    <a href="#" onclick="return false;">
+      <i class="icon-pencil"></i></a>
   </td>
   <td class="column-delete">
     <a href="#" onclick="return false;">

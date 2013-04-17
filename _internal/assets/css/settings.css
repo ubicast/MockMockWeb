@@ -24,7 +24,8 @@ span.icon-accept {
   padding-right: 2px;
 }
 
+.column-edit,
 .column-delete {
-  width: 50px;
+  width: 40px;
   text-align: center !important;
 }

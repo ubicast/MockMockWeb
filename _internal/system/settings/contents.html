@@ -1,1 +1,19 @@
-contents
+<table class="table table-striped">
+<thead>
+<tr>
+  <th>Path</th>
+  <th class="column-delete">Delete</th>
+</tr>
+</thead>
+<tbody>
+<% contentPaths.forEach(function(path) { %>
+<tr>
+  <td><%- path %></td>
+  <td class="column-delete">
+    <a href="#" onclick="return false;">
+      <i class="icon-remove"></i></a>
+  </td>
+</tr>
+<% }) %>
+</tbody>
+</table>

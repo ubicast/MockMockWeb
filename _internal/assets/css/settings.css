@@ -23,3 +23,8 @@ span.icon-accept {
   padding-left: 10px;
   padding-right: 2px;
 }
+
+.column-delete {
+  width: 50px;
+  text-align: center !important;
+}

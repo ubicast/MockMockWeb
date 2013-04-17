@@ -47,6 +47,7 @@ var app = Connect()
         });
       }
       else {
+        context.contentPaths = site.listContentPaths();
         File.serveTemplateWithBorder(
           response, internalAbsPath('/system/settings/contents.html'), borderPath, context);
       }

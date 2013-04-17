@@ -1,10 +1,9 @@
 MockMockWeb
 
 Features:
-- ページ一覧
--- ページ一覧からのページ作成、編集
+- コンテンツ一覧
+-- コンテンツ一覧からのページ作成、編集
 - HTMLエディタに入力支援
-- リアルタイムアクセスログ
 - ブックマークレット編集
 - サイトデータのエクスポート/インポート
 - 認証
@@ -12,7 +11,7 @@ Features:
 User Stories:
 
 Engineering Tasks:
-- Settingsページの共通レイアウト切り出し
+- コンテンツ一覧の表示
 
 To Do on current task:
 * querystringにURLエンコード済みの文字が入っている場合

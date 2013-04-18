@@ -46,6 +46,12 @@ var app = Connect()
           response.end('');
         });
       }
+      else if (command.match('^/contents/delete')) {
+        var path = request.query['path'];
+        if (path) site.deleteContent(path);
+        response.writeHead(200, {'Content-Type': 'text/plain'});
+        response.end('');
+      }
       else {
         context.contentPaths = site.listContentPaths();
         File.serveTemplateWithBorder(

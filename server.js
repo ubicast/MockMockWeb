@@ -85,7 +85,8 @@ var app = Connect()
       site.respond(request, response);
     }
   });
-var server = Http.createServer(app).listen(3000, function() {
+var port = process.env.PORT || 3000;
+var server = Http.createServer(app).listen(port, function() {
   console.log("Server listening on port 3000.");
 });
 

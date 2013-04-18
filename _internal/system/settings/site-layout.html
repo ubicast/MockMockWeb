@@ -1,6 +1,7 @@
 <div id="layout-form">
   <script type="text/javascript">
     jQuery(function() {
+      jQuery('#input-layout').markItUp(myHtmlSettings);
       jQuery('#save-layout').click(function() {
         var button = jQuery(this).button('loading');
         var status = jQuery('#layout-form').find('span.status').empty();

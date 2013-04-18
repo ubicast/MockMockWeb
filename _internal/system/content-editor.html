@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>MockMockWeb Content</title>
+  <title>MockMockWeb - <%= path %></title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Le styles -->
@@ -16,16 +16,22 @@
       border-bottom: 1px solid #eeeeee;
       font-size: 18px;
     }
-    textarea {
-      width: 100%;
-      height: 400px;
-    }
     span.status {
       margin-left: 5px;
       color: red;
     }
+    div.markItUp {
+      width: 100%;
+    }
+    div.markItUp textarea {
+      width: 100%;
+      height: 400px;
+      font-size: 14px;
+    }
   </style>
   <link href="/_internal/assets/css/bootstrap-responsive.css" rel="stylesheet">
+  <link href="/_internal/assets/markitup/skins/simple/style.css" rel="stylesheet">
+  <link href="/_internal/assets/markitup/sets/html/style.css" rel="stylesheet">
 
   <script src="/_internal/assets/js/jquery-1.9.1.min.js"></script>
 </head>
@@ -36,6 +42,7 @@
   <div id="content-form-div">
     <script type="text/javascript">
       jQuery(function() {
+        jQuery('textarea.content').markItUp(myHtmlSettings);
         jQuery('#save-content').click(function() {
           var params = jQuery('#content-form').serialize();
           jQuery.post('/_internal/content/save', params, function() {
@@ -48,7 +55,7 @@
     <form id="content-form">
       <div class="form-title"><%= path %></div>
       <input type="hidden" name="path" value="<%= path %>"/>
-      <textarea name="content" rows="3"><%= content %></textarea>
+      <textarea class="content" name="content" rows="3"><%= content %></textarea>
       <div class="btn-group">
         <button id="save-content" class="btn btn-primary" type="button">Save</button>
       </div>
@@ -58,5 +65,7 @@
 </div>
 
 <script src="/_internal/assets/js/bootstrap.min.js"></script>
+<script src="/_internal/assets/markitup/jquery.markitup.js"></script>
+<script src="/_internal/assets/markitup/sets/html/set.js"></script>
 </body>
 </html>

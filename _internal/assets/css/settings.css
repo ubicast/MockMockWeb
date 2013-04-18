@@ -29,3 +29,12 @@ span.icon-accept {
   width: 40px;
   text-align: center !important;
 }
+
+div.markItUp {
+  width: 100%;
+}
+div.markItUp textarea {
+  width: 100%;
+  height: 400px;
+  font-size: 14px;
+}

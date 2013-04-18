@@ -1,20 +1,17 @@
 MockMockWeb
 
 Features:
-- コンテンツ一覧
--- コンテンツ一覧からのページ作成、編集
-- HTMLエディタに入力支援
-- ブックマークレット編集
+- 複数サイトデータ管理
 - サイトデータのエクスポート/インポート
+- ブックマークレット編集
 - 認証
-
-User Stories:
+- コンテンツ一覧からのページ作成（いる？）
 
 Engineering Tasks:
 - 例外でサーバーごと死ぬのを回避
 
 To Do on current task:
-* querystringにURLエンコード済みの文字が入っている場合
+* HTMLエディタに入力支援
 
 Future ideas:
 - ロギング

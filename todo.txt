@@ -11,7 +11,7 @@ Features:
 User Stories:
 
 Engineering Tasks:
-- コンテンツ一覧の表示
+- 例外でサーバーごと死ぬのを回避
 
 To Do on current task:
 * querystringにURLエンコード済みの文字が入っている場合

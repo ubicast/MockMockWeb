@@ -33,7 +33,7 @@ var app = Connect()
     else if (internalPathMatch(request, '/settings')) {
       var borderPath = internalAbsPath('/system/settings/border-template.html');
       var command = request.url.replace(INTERNAL_PATH + '/settings', '');
-      var context = { command: command };
+      var context = { request: request, command: command };
       if (command == '/layout') {
         context.layout = site.getLayout();
         File.serveTemplateWithBorder(

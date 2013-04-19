@@ -27,8 +27,7 @@ var app = Connect()
   .use(Connect.bodyParser())
   .use(function(request, response){
     if (internalPathMatch(request, '/assets')) {
-      var absPath = '.' + request.url;
-      File.serveStatic(response, absPath);
+      File.serveStatic(response, '.' + request.url);
     }
     else if (internalPathMatch(request, '/settings')) {
       var borderPath = internalAbsPath('/system/settings/border-template.html');

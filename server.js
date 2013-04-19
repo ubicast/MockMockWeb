@@ -16,10 +16,10 @@ function internalAbsPath(path) {
 }
 
 // Initializing
-var repository = new Repository.InMemory();
 var defaultLayout = Fs.readFileSync(
   internalAbsPath('/system/default-layout.html'), {encoding: 'utf8'});
-var site = new Site(Site.newData('default', defaultLayout), repository);
+var repository = new Repository.InMemory('default', defaultLayout);
+var site = new Site(repository);
 
 // Start up the server
 var app = Connect()
@@ -35,35 +35,37 @@ var app = Connect()
       var command = request.url.replace(INTERNAL_PATH + '/settings', '');
       var context = { request: request, command: command };
       if (command == '/layout') {
-        context.layout = site.getLayout();
-        File.serveTemplateWithBorder(
-          response, internalAbsPath('/system/settings/site-layout.html'), borderPath, context);
+        site.repository.getLayout(function(layout) {
+          context.layout = layout;
+          File.serveTemplateWithBorder(
+            response, internalAbsPath('/system/settings/site-layout.html'), borderPath, context);
+        });
       }
       else if (command == '/layout/save') {
-        site.setLayout(request.body.layout);
-        site.save(function() {
+        site.repository.setLayout(request.body.layout, function() {
           response.writeHead(200, {'Content-Type': 'text/plain'});
           response.end('');
         });
       }
       else if (command.match('^/contents/delete')) {
         var path = request.query['path'];
-        if (path) site.deleteContent(path);
-        response.writeHead(200, {'Content-Type': 'text/plain'});
-        response.end('');
+        site.repository.deleteContent(path, function() {
+          response.writeHead(200, {'Content-Type': 'text/plain'});
+          response.end('');
+        });
       }
       else {
-        context.contentPaths = site.listContentPaths();
-        File.serveTemplateWithBorder(
-          response, internalAbsPath('/system/settings/contents.html'), borderPath, context);
+        site.repository.listContentPaths(function(paths) {
+          context.contentPaths = paths;
+          File.serveTemplateWithBorder(
+            response, internalAbsPath('/system/settings/contents.html'), borderPath, context);
+        });
       }
     }
     else if (internalPathMatch(request, '/content')) {
       var command = request.url.replace(INTERNAL_PATH + '/content', '');
       if (command == '/save') {
-        site.setContent(request.body.path, request.body.content);
-        site.save(function(err) {
-          if (err) console.log(err);
+        site.repository.setContent(request.body.path, request.body.content, function() {
           response.writeHead(200, {'Content-Type': 'text/plain'});
           response.end('');
         });
@@ -71,9 +73,11 @@ var app = Connect()
       else {
         var urlPath = request.query['path'];
         if (urlPath) {
-          File.serveTemplate(response, internalAbsPath('/system/content-editor.html'), {
-            path: urlPath,
-            content: site.getContent(urlPath)
+          site.repository.getContent(urlPath, function(content) {
+            File.serveTemplate(response, internalAbsPath('/system/content-editor.html'), {
+              path: urlPath,
+              content: content
+            });
           });
         }
         else {

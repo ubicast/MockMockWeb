@@ -6,10 +6,35 @@ var mongoUri = process.env.MONGOLAB_URI ||
 
 mongoose.connect(mongoUri);
 
-var Cat = mongoose.model('Cat', { name: String });
-
-var kitty = new Cat({ name: 'Zildjian' });
-kitty.save(function (err) {
-  if (err) throw err;
-  console.log('meow');
+var settingSchema = new mongoose.Schema({
+  key: {
+    type: String,
+    unique: true
+  },
+  value: String
 });
+var Setting = mongoose.model('Setting', settingSchema);
+
+var setting = new Setting({ key: 'name', value: 'Morita' });
+setting.save(function (err) {
+  if (err) throw err;
+  console.log('saved');
+});
+
+Setting.findOne({key: 'name'}, function(err, setting) {
+  if (err) throw err;
+  if (setting) {
+    console.log("setting: " + JSON.stringify(setting));
+  }
+  else {
+    var setting = new Setting({ key: 'name', value: 'Morita' });
+    setting.save(function (err) {
+      if (err) throw err;
+      console.log('saved');
+    });
+  }
+//  mongoose.disconnect(function() {
+//    console.log("end");
+//  });
+});
+

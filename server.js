@@ -16,10 +16,15 @@ function internal(path) {
   return '.' + INTERNAL_PATH + path;
 }
 
+var mongoUri = process.env.MONGOLAB_URI ||
+  process.env.MONGOHQ_URL ||
+  'mongodb://localhost/mockmockweb';
+
 // Initializing
 var defaultLayout = Fs.readFileSync(
   internal('/system/default-layout.html'), {encoding: 'utf8'});
-var repository = new Repository.InMemory('default', defaultLayout);
+// var repository = new Repository.InMemory('default', defaultLayout);
+var repository = new Repository.MongoDB('default', defaultLayout, mongoUri);
 var site = new Site(repository, Path.resolve(internal('/system')));
 
 // Start up the server

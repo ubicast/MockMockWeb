@@ -31,7 +31,6 @@ var app = Connect()
       File.serveStatic(response, '.' + request.url);
     }
     else if (internalPathMatch(request, '/settings')) {
-      var borderPath = internalAbsPath('/system/settings/border-template.html');
       var command = request.url.replace(INTERNAL_PATH + '/settings', '');
       var context = { request: request, command: command };
       if (command == '/layout') {
@@ -50,10 +49,7 @@ var app = Connect()
     else if (internalPathMatch(request, '/content')) {
       var command = request.url.replace(INTERNAL_PATH + '/content', '');
       if (command == '/save') {
-        site.repository.setContent(request.body.path, request.body.content, function() {
-          response.writeHead(200, {'Content-Type': 'text/plain'});
-          response.end('');
-        });
+        site.saveContent(request, response);
       }
       else {
         site.content(request, response);

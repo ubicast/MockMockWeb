@@ -38,10 +38,7 @@ var app = Connect()
         site.layout(request, response, context);
       }
       else if (command == '/layout/save') {
-        site.repository.setLayout(request.body.layout, function() {
-          response.writeHead(200, {'Content-Type': 'text/plain'});
-          response.end('');
-        });
+        site.saveLayout(request, response);
       }
       else if (command.match('^/contents/delete')) {
         var path = request.query['path'];

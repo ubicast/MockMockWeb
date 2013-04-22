@@ -44,11 +44,7 @@ var app = Connect()
         site.deleteContent(request, response);
       }
       else {
-        site.repository.listContentPaths(function(paths) {
-          context.contentPaths = paths;
-          File.serveTemplateWithBorder(
-            response, internalAbsPath('/system/settings/contents.html'), borderPath, context);
-        });
+        site.listContentPaths(request, response, context);
       }
     }
     else if (internalPathMatch(request, '/content')) {

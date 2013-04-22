@@ -16,15 +16,23 @@ function internal(path) {
   return '.' + INTERNAL_PATH + path;
 }
 
-var mongoUri = process.env.MONGOLAB_URI ||
-  process.env.MONGOHQ_URL ||
-  'mongodb://localhost/mockmockweb';
+// Args
+var reposType = process.argv.length >= 3 ? process.argv[2] : null;
 
 // Initializing
 var defaultLayout = Fs.readFileSync(
   internal('/system/default-layout.html'), {encoding: 'utf8'});
-// var repository = new Repository.InMemory('default', defaultLayout);
-var repository = new Repository.MongoDB('default', defaultLayout, mongoUri);
+var repository = null;
+if (reposType && reposType == 'mongo') {
+  var mongoUri = process.env.MONGOLAB_URI ||
+    process.env.MONGOHQ_URL ||
+    'mongodb://localhost/mockmockweb';
+  repository = new Repository.MongoDB('default', defaultLayout, mongoUri);
+}
+else {
+  repository = new Repository.InMemory('default', defaultLayout);
+}
+console.log("Repository type: " + repository.type);
 var site = new Site(repository, Path.resolve(internal('/system')));
 
 // Start up the server

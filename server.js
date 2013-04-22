@@ -41,11 +41,7 @@ var app = Connect()
         site.saveLayout(request, response);
       }
       else if (command.match('^/contents/delete')) {
-        var path = request.query['path'];
-        site.repository.deleteContent(path, function() {
-          response.writeHead(200, {'Content-Type': 'text/plain'});
-          response.end('');
-        });
+        site.deleteContent(request, response);
       }
       else {
         site.repository.listContentPaths(function(paths) {

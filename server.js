@@ -1,5 +1,6 @@
 var Http = require('http');
 var Fs = require('fs');
+var Path = require('path');
 var Connect = require('connect');
 var File = require('./lib/file');
 var Site = require('./lib/site');
@@ -19,7 +20,7 @@ function internalAbsPath(path) {
 var defaultLayout = Fs.readFileSync(
   internalAbsPath('/system/default-layout.html'), {encoding: 'utf8'});
 var repository = new Repository.InMemory('default', defaultLayout);
-var site = new Site(repository);
+var site = new Site(repository, Path.resolve(internalAbsPath('/system')));
 
 // Start up the server
 var app = Connect()
@@ -34,11 +35,7 @@ var app = Connect()
       var command = request.url.replace(INTERNAL_PATH + '/settings', '');
       var context = { request: request, command: command };
       if (command == '/layout') {
-        site.repository.getLayout(function(layout) {
-          context.layout = layout;
-          File.serveTemplateWithBorder(
-            response, internalAbsPath('/system/settings/site-layout.html'), borderPath, context);
-        });
+        site.layout(request, response, context);
       }
       else if (command == '/layout/save') {
         site.repository.setLayout(request.body.layout, function() {

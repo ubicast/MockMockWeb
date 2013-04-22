@@ -12,15 +12,15 @@ function internalPathMatch(request, path) {
   return request.url.match(new RegExp('^' + INTERNAL_PATH + path));
 }
 
-function internalAbsPath(path) {
+function internal(path) {
   return '.' + INTERNAL_PATH + path;
 }
 
 // Initializing
 var defaultLayout = Fs.readFileSync(
-  internalAbsPath('/system/default-layout.html'), {encoding: 'utf8'});
+  internal('/system/default-layout.html'), {encoding: 'utf8'});
 var repository = new Repository.InMemory('default', defaultLayout);
-var site = new Site(repository, Path.resolve(internalAbsPath('/system')));
+var site = new Site(repository, Path.resolve(internal('/system')));
 
 // Start up the server
 var app = Connect()

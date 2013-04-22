@@ -56,18 +56,7 @@ var app = Connect()
         });
       }
       else {
-        var urlPath = request.query['path'];
-        if (urlPath) {
-          site.repository.getContent(urlPath, function(content) {
-            File.serveTemplate(response, internalAbsPath('/system/content-editor.html'), {
-              path: urlPath,
-              content: content
-            });
-          });
-        }
-        else {
-          File.send404(response);
-        }
+        site.content(request, response);
       }
     }
     else {

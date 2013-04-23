@@ -1,9 +1,8 @@
 MockMockWeb
 
 Features:
-- 複数サイトデータ管理
+* ブックマークレット編集
 - サイトデータのエクスポート/インポート
-- ブックマークレット編集
 - 認証
 - コンテンツ一覧からのページ作成（いる？）
 
@@ -11,7 +10,7 @@ Engineering Tasks:
 - 例外でサーバーごと死ぬのを回避
 
 To Do on current task:
-* HTMLエディタに入力支援
+* ブックマークレット調査
 
 Future ideas:
 - ロギング
@@ -20,6 +19,4 @@ Future ideas:
 -- GitHubの会社ページ - https://github.com/ubicast/
 -- ライセンス
 -- きちんとテストを書く
--- プロジェクトサイトにLPOを適用してみる
-- On-memory, One-sessionのMock Webサービス
-
+- 複数サイトデータ管理

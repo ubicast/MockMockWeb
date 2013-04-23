@@ -33,3 +33,8 @@ body {
 .container .menu {
   margin: 20px 0;
 }
+
+a.menu-item {
+  margin-left: 5px;
+  margin-right: 5px;
+}

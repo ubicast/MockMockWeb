@@ -24,10 +24,13 @@
 <div id="footer">
   <div class="container">
     <div class="muted menu">
-      <a href="/">Home</a>
-      | <a href="#"
-         onclick="window.open('/_internal/content?path=<%= request.url %>', 'Edit'); return false;">Edit</a>
-      | <a href="/_internal/settings">Settings</a>
+      <a class="menu-item" href="/"><i class="icon-home"></i> Home</a>
+      |
+      <a class="menu-item" href="#"
+         onclick="window.open('/_internal/content?path=<%= request.url %>', 'Edit'); return false;">
+        <i class="icon-pencil"></i> Edit</a>
+      |
+      <a class="menu-item" href="/_internal/settings"><i class="icon-cog"></i> Settings</a>
     </div>
   </div>
 </div>

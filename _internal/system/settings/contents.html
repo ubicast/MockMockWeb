@@ -23,7 +23,7 @@
   </td>
   <td class="column-edit">
     <a href="#"
-       onclick="window.open('/_internal/content?path=<%= path %>', 'Edit'); return false;">
+       onclick="window.open('/_internal/content?path=<%= encodeURIComponent(path) %>', 'Edit'); return false;">
       <i class="icon-pencil"></i></a>
   </td>
   <td class="column-delete">

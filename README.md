@@ -1,7 +1,7 @@
 MockMockWeb
 ===========
 
-MockMockWeb is a Node.js-based web application server that allows you to:
+MockMockWeb is a [Heroku](https://www.heroku.com/)-ready Node.js-based web application server that allows you to:
 
 * instantly launch a website that sends an empty page (with status 200) to any request/URL
 * edit any page on the spot
@@ -27,3 +27,14 @@ Getting Started
 4) Bring up a web browser and go to http://localhost:3000
 
 5) Edit the empty website as you want
+
+(*) The site data will be stored in the memory by default.
+
+Deploying to Heroku
+-------------------
+
+You can customize the options by editing the Procfile, which is used by Heroku to launch the app server. By default, the site data will be stored in the MongoDB (if you provision one of the MongoDB add-ons).
+
+For more details, see: https://devcenter.heroku.com/articles/nodejs
+
+

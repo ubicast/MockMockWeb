@@ -1,7 +1,7 @@
 MockMockWeb
 ===========
 
-MockMockWeb is a [Heroku](https://www.heroku.com/)-ready Node.js-based web application server that allows you to:
+MockMockWeb is a [Heroku](https://www.heroku.com/)-ready [Node.js](http://nodejs.org/)-based web application server that allows you to:
 
 * instantly launch a website that sends an empty page (with status 200) to any request/URL
 * edit any page on the spot

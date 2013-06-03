@@ -26,15 +26,15 @@ Getting Started
 
 4) Bring up a web browser and go to http://localhost:3000
 
-![index page](https://raw.github.com/ubicast/MockMockWeb/master/docs/index.png)
+![index page](docs/index.png)
 
 5) Edit the empty website as you want
 
-![move to any path](https://raw.github.com/ubicast/MockMockWeb/master/docs/any-path.png)
+![move to any path](docs/any-path.png)
 
-![edit the page](https://raw.github.com/ubicast/MockMockWeb/master/docs/edit-page.png)
+![edit the page](docs/edit-page.png)
 
-![edited](https://raw.github.com/ubicast/MockMockWeb/master/docs/edited.png)
+![edited](docs/edited.png)
 
 (*) The site data will be stored in the memory by default.
 

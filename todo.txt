@@ -13,10 +13,5 @@ To Do on current task:
 * ブックマークレット調査
 
 Future ideas:
-- ロギング
-- パスへの意味付け（名前、関連）
-- 公開プロジェクト化
--- GitHubの会社ページ - https://github.com/ubicast/
--- ライセンス
--- きちんとテストを書く
+- きちんとテストを書く
 - 複数サイトデータ管理

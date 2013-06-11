@@ -1,7 +1,7 @@
 MockMockWeb Changelog
 =====================
 
-Changes in version 0.2 (2013-06-11)
+Changes in version 0.2.0 (2013-06-11)
 -----------------------------------
 
 * Added 'Tools' to the main menu in Settings

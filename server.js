@@ -63,6 +63,9 @@ app.use(function(request, response){
     else if (command.match('^/contents/delete')) {
       site.deleteContent(request, response);
     }
+    else if (command == '/tools') {
+      site.tools(request, response, context);
+    }
     else {
       site.listContentPaths(request, response, context);
     }

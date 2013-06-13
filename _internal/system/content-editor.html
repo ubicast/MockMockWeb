@@ -17,8 +17,7 @@
       font-size: 18px;
     }
     span.status {
-      margin-left: 5px;
-      color: red;
+      color: green;
     }
     div.markItUp {
       width: 100%;
@@ -41,14 +40,27 @@
 <div class="container">
   <div id="content-form-div">
     <script type="text/javascript">
+      function saveContent(button, close) {
+        var form = jQuery('#content-form');
+        var params = form.serialize();
+        var status = form.find('span.status').empty();
+        button.button('loading');
+        jQuery.post('/_internal/content/save', params, function() {
+          button.button('reset');
+          window.opener.location.reload();
+          if (close)
+            window.close();
+          else
+            status.html('<i class="icon-ok"></i> Saved');
+        });
+      }
       jQuery(function() {
         jQuery('textarea.content').markItUp(myHtmlSettings);
         jQuery('#save-content').click(function() {
-          var params = jQuery('#content-form').serialize();
-          jQuery.post('/_internal/content/save', params, function() {
-            window.opener.location.reload();
-            window.close();
-          });
+          saveContent(jQuery(this), false);
+        });
+        jQuery('#save-content-and-close').click(function() {
+          saveContent(jQuery(this), true);
         });
       });
     </script>
@@ -56,10 +68,14 @@
       <div class="form-title"><%= path %></div>
       <input type="hidden" name="path" value="<%= path %>"/>
       <textarea class="content" name="content" rows="3"><%= content %></textarea>
-      <div class="btn-group">
-        <button id="save-content" class="btn btn-primary" type="button">Save</button>
+      <div>
+        <button id="save-content" class="btn btn-primary" type="button"
+                data-loading-text="Saving...">Save</button>
+        <span class="status"> </span>
+        <button id="save-content-and-close" class="btn btn-primary" type="button"
+                data-loading-text="Saving..." style="margin-left: 15px;">Save and Close</button>
+        <button id="close" class="btn btn-primary" type="button" onclick="window.close();">Close</button>
       </div>
-      <span class="status"></span>
     </form>
   </div>
 </div>

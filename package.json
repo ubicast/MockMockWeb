@@ -3,7 +3,7 @@
   "version": "0.2.0",
   "description": "Mock up a website in seconds",
   "engines": {
-    "node": "0.10.x"
+    "node": "8.1.4"
   },
   "dependencies": {
     "mime": "~1.2.7",

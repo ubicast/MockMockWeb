@@ -1,6 +1,11 @@
 MockMockWeb Changelog
 =====================
 
+Changes in version 0.2.2 (2017-07-17)
+-------------------------------------
+
+* Upgraded node version to v8.1.4
+
 Changes in version 0.2.1 (2015-10-02)
 -------------------------------------
 

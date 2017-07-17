@@ -1,6 +1,6 @@
 {
   "name": "MockMockWeb",
-  "version": "0.2.0",
+  "version": "0.2.2",
   "description": "Mock up a website in seconds",
   "engines": {
     "node": "8.1.4"
